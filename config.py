@@ -1,6 +1,8 @@
+from math import *
 x_min=0
 x_max=pi
 a_move=2
+q=0.5
 def u0(x):
     return sin(x)
 def uL(t):
