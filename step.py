@@ -42,3 +42,18 @@ def step_UW(u_prev,t):
         c.append(0)
         d.append(u_prev[i])
     return prog(a,b,c,d)
+def step_BAB(u_prev,t):
+    a=[]
+    b=[]
+    c=[]
+    d=[]
+    a.append(0)
+    b.append(1)
+    c.append(0)
+    d.append(uL(t))
+    for i in range(1,len(u_prev)):
+        a.append(1-q)
+        b.append(1+q)
+        c.append(0)
+        d.append((1-q)*u_prev[i]+(1+q)*u_prev[i-1])
+    return prog(a,b,c,d)
