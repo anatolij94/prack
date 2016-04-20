@@ -5,8 +5,14 @@ a_move=2
 q=0.5
 t_max=0.5
 def u0(x):
-    return sin(x)
+    if x<=0:
+        return 1
+    else:
+        return 0
 def uL(t):
-    return sin(-a_move*t)
+    return 1
 def ua(x,t):
-    return sin(x-a_move*t)
+    if x-a_move*t<=0:
+        return 1
+    else:
+        return 0
